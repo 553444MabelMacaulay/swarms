@@ -93,7 +93,9 @@ testpaths = ["tests"]
 asyncio_mode = "auto"
 # Removed --cov-report=xml locally since I don't use CI coverage uploads
 # Using -p no:warnings to keep test output clean during local dev
-addopts = "--cov=swarms --cov-report=term-missing -p no:warnings"
+# Dropped --cov=swarms for now — coverage slows down quick iteration runs locally;
+# re-enable when doing a proper test pass before pushing.
+addopts = "-p no:warnings"
 
 [tool.coverage.run]
 source = ["swarms"]
